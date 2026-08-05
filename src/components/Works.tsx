@@ -26,6 +26,20 @@ const PROJECTS = [
     tags: ["ブランディング", "ストーリーテリング", "エディトリアル"],
     bg: "linear-gradient(135deg, #14140f, #0d0d0b)",
   },
+  {
+    slug: "prism",
+    title: "PRISM",
+    tagline: "Liquid Glassデザインスタジオのブランドサイト",
+    tags: ["グラスモーフィズム", "ブランディング", "ライトUI"],
+    bg: "linear-gradient(135deg, #f4f3f0, #e8e6e0)",
+  },
+  {
+    slug: "waddle",
+    title: "Waddle",
+    tagline: "カジュアルモバイルゲームの訴求LP",
+    tags: ["ゲーム", "キャラクターアニメーション", "ポップUI"],
+    bg: "linear-gradient(135deg, #eaf6ff, #d6ecfb)",
+  },
 ];
 
 export default function Works() {

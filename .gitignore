@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# claude code local settings
+.claude/settings.local.json
+
+# raw source material (not part of the site; used assets are copied into public/)
+/SNS投稿で使用した素材/
