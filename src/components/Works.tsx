@@ -27,13 +27,6 @@ const PROJECTS = [
     bg: "linear-gradient(135deg, #14140f, #0d0d0b)",
   },
   {
-    slug: "prism",
-    title: "PRISM",
-    tagline: "Liquid Glassデザインスタジオのブランドサイト",
-    tags: ["グラスモーフィズム", "ブランディング", "ライトUI"],
-    bg: "linear-gradient(135deg, #f4f3f0, #e8e6e0)",
-  },
-  {
     slug: "waddle",
     title: "Waddle",
     tagline: "カジュアルモバイルゲームの訴求LP",
