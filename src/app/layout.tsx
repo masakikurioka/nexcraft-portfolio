@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import {
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_URL,
+} from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -20,9 +26,26 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Nex Craft | Webサイト・LP制作",
-  description:
-    "モダンフロントエンドとAI開発を組み合わせ、印象に残るLP・Webサイトを制作するNex Craftのポートフォリオです。",
+  // 相対パスのURL(canonical・OGPなど)を、この正規ドメイン基準の絶対URLに変換する
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  // "./" は「そのページ自身のURL」を正規URLとして宣言する(vercel.app経由でも hellokuma.com を正とする)
+  alternates: { canonical: "./" },
+  openGraph: {
+    type: "website",
+    locale: "ja_JP",
+    siteName: SITE_NAME,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: "./",
+  },
+  twitter: {
+    card: "summary",
+    site: "@nexcraft_dev",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
 };
 
 export default function RootLayout({

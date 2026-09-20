@@ -3,8 +3,8 @@ HP制作(Web制作)の受注につなげるための個人ポートフォリオ�
 Next.js + Tailwind CSS + Framer Motionで、自己紹介・スキル・サンプル制作実績・お問い合わせフォームを掲載している。
 実績セクションには、架空クライアントを想定した実際に動くサンプルLPを複数掲載し、技術力をアピールする構成。
 
-- 公開URL: https://nexcraft-portfolio.vercel.app
-- GitHubリポジトリ: https://github.com/nexcraft04510/nexcraft-portfolio
+- 公開URL(正規): https://hellokuma.com(`www.hellokuma.com` はここへ308リダイレクト。`nexcraft-portfolio.vercel.app` は検証用として残し、canonicalは `hellokuma.com` を指す)
+- GitHubリポジトリ: https://github.com/masakikurioka/nexcraft-portfolio
 
 # 技術スタック
 - フレームワーク: Next.js 16(App Router、Turbopack)
@@ -20,7 +20,8 @@ Next.js + Tailwind CSS + Framer Motionで、自己紹介・スキル・サンプ
 - サンプル制作実績(実績1件)は `src/app/works/[slug]/page.tsx` として追加する
   - デザインの都合でフォントなどをサーバーコンポーネントで読み込みたい場合は、`page.tsx`(サーバー)から `Content.tsx`(クライアント)に分離する(例: `works/marche/page.tsx` → `works/marche/MarcheContent.tsx`)
   - 各サンプルページには共通コンポーネント `WorkDemoBar`(「ポートフォリオへ戻る」+ DEMO表記)を必ず入れる
-  - 新しい実績を追加したら `src/components/Works.tsx` の `PROJECTS` 配列にも追加する
+  - 新しい実績を追加したら `src/lib/works.ts` の `PROJECTS` 配列にも追加する(実績一覧の表示とsitemap.xmlの両方がここを参照する)
+- 共通の定数・関数は `src/lib/` に置く。正規URL・サイト名などは `src/lib/site.ts`(`SITE_URL` は `https://hellokuma.com`)。canonical・OGP・JSON-LD・sitemap・robotsはこの値を基準に生成する
 - 実際にサイトで使う画像などの静的アセットは `public/` 以下に置く(例: `public/works/`)
 - 元データ・未使用の生素材フォルダはリポジトリに含めない(`.gitignore` で除外し、使う分だけ `public/` にコピーする)
 
